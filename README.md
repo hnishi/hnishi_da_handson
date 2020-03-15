@@ -1,5 +1,7 @@
 # hnishi_da_handson
 
+Google Colabratory で動作確認を行った。
+
 ## development
 
 ### notebook に google colab へのリンク（Open in Colab）を貼る
