@@ -1,8 +1,23 @@
-# hnishi_da_handson
+# データ分析 勉強会 資料
+
+## 目次
+
+- [基本的な統計量とガウス分布](da_handson_basic_statistic_values.ipynb)
+- [主成分分析](da_handson_pca.ipynb)
+
+## 使い方
+
+各ノートブックの上部の、"Open in Colab" のボタンをクリックすると、
+Google Golaboratory 上で開くことができます。
+上から順番に実行（Shift + enter）で、python のコードを実行できます。
+
+## 推奨環境
 
 Google Colabratory で動作確認を行った。
 
-## development
+オフライン環境の場合、画像が正常に表示されない箇所があります。
+
+## 作業メモ
 
 ### notebook に google colab へのリンク（Open in Colab）を貼る
 
