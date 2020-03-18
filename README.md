@@ -1,5 +1,8 @@
 # データ分析 勉強会 資料
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 ## 目次
 
 - [基本的な統計量とガウス分布](da_handson_basic_statistic_values.ipynb)
