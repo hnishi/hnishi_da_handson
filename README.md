@@ -5,6 +5,12 @@
 - [基本的な統計量とガウス分布](da_handson_basic_statistic_values.ipynb)
 - [主成分分析](da_handson_pca.ipynb)
 
+## 使い方
+
+各ノートブックの上部の、"Open in Colab" のボタンをクリックすると、
+Google Golaboratory 上で開くことができます。
+上から順番に実行（Shift + enter）で、python のコードを実行できます。
+
 ## 推奨環境
 
 Google Colabratory で動作確認を行った。
