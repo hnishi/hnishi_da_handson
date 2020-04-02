@@ -23,18 +23,18 @@
 - タンパク質分子の立体構造モデルの構造空間の次元削減と可視化
 - タンパク質の全原子モデルの立体構造は、分子内に含まれる原子の座標情報で表すことができる （原子数 × 3 (x, y, z) 次元のベクトル）
 
-以下は、タンパク質の分子シミュレーションで使われるモデルの1例。  
-（紫色とオレンジ色で表されたリボンモデルがタンパク質で、周りに水とイオンが表示されている）  
+以下は、タンパク質の分子シミュレーションで使われるモデルの1例。
+（紫色とオレンジ色で表されたリボンモデルがタンパク質で、周りに水とイオンが表示されている）
 （この場合、3547 個の原子 --> 10641 次元）
 
 <img src="https://github.com/hnishi/hnishi_da_handson/blob/master/images/cdr-h3-pbc.png?raw=true" width="50%">
 
-主成分分析により、この立体構造空間を、2次元空間に投影することができる。  
+主成分分析により、この立体構造空間を、2次元空間に投影することができる。
 以下は、その投影に対して自由エネルギーを計算した図。
 
 ![pmf](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/peds/29/11/10.1093_protein_gzw028/4/m_gzw028f01.jpeg?Expires=1587240307&Signature=VSLAYMRRIS1aEDvRh~qXlKnqad3NhFo9Sg39TcSQwD3Rn0ikOvue4NsGUKc7V5QQLoEw9qFO256N8gDt9yxtOz8RLYZ5dizEkYat15R3Gr0Jjcs3aOq~kqlevS9Zx4uDqNDN6NfjjkXv2DCt1pdrecxhyIqOTSdRmFXWiAOybVk0QCHNNEhUscvPDbLVsWoM9839Oa9Bb~QaSgaNr~dWu3nNI-8IKy03m45ybWtMZxXjamZjMFR6cxiv5qwynkmpfaBEgjyboRPe8q0otTHvVGJ4yjqAQiD5OpLZwClI5ex3CGTd1CGEKiDFwHDwKYYCgpEF42JtGfkRn1gFt5sEYQ__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA)
 
-2次元空間上の1点が、1つの立体構造を表している。  
+2次元空間上の1点が、1つの立体構造を表している。
 つまり、この例では、もともと10641次元あった空間を2次元にまで削減している。
 
 Ref) [Nishigami, H., Kamiya, N., & Nakamura, H. (2016). Revisiting antibody modeling assessment for CDR-H3 loop. Protein Engineering, Design and Selection, 29(11), 477-484.](https://academic.oup.com/peds/article/29/11/477/2462452)
@@ -43,8 +43,8 @@ Ref) [Nishigami, H., Kamiya, N., & Nakamura, H. (2016). Revisiting antibody mode
 
 以下は、PCAが行う座標変換の例
 
-$x_1$ , $x_2$ は、データセットの元々の座標軸であり、  
-PC1, PC2 は座標変換後に得られる新しい座標軸、主成分1、主成分2 である (Principal Components)。  
+$x_1$ , $x_2$ は、データセットの元々の座標軸であり、
+PC1, PC2 は座標変換後に得られる新しい座標軸、主成分1、主成分2 である (Principal Components)。
 
 
 
@@ -68,24 +68,24 @@ d 次元のデータを k 次元に削減する場合
 
 ---
 
-固有値問題を解くことで、線形独立な基底ベクトルを得ることができる。  
+固有値問題を解くことで、線形独立な基底ベクトルを得ることができる。
 詳細は、線形代数の書籍等を参考にする（ここでは詳細な解説をしない）。
 
-参考）  
+参考）
 
 https://dora.bk.tsukuba.ac.jp/~takeuchi/?%E7%B7%9A%E5%BD%A2%E4%BB%A3%E6%95%B0II%2F%E5%9B%BA%E6%9C%89%E5%80%A4%E5%95%8F%E9%A1%8C%E3%83%BB%E5%9B%BA%E6%9C%89%E7%A9%BA%E9%96%93%E3%83%BB%E3%82%B9%E3%83%9A%E3%82%AF%E3%83%88%E3%83%AB%E5%88%86%E8%A7%A3
 
 ## python による PCA の実行
 
-以下、Python を使った PCA の実行を順番に見ていく。  
-その後、scikit-learn ライブラリを使った PCA の簡単で効率のよい実装を見る。  
+以下、Python を使った PCA の実行を順番に見ていく。
+その後、scikit-learn ライブラリを使った PCA の簡単で効率のよい実装を見る。
 
 ### データセット
 
-- データセットは、 [Wine](https://archive.ics.uci.edu/ml/datasets/Wine) というオープンソースのデータセットを使う。  
+- データセットは、 [Wine](https://archive.ics.uci.edu/ml/datasets/Wine) というオープンソースのデータセットを使う。
 - 178 行のワインサンプルと、それらの化学的性質を表す 13 列の特徴量で構成されている。
-- それぞれのサンプルに、クラス 1, 2, 3 のいずれかがラベルされており、  
-イタリアの同じ地域で栽培されている異なる品種のブドウを表している   
+- それぞれのサンプルに、クラス 1, 2, 3 のいずれかがラベルされており、
+イタリアの同じ地域で栽培されている異なる品種のブドウを表している
 （PCA は教師なし学習なので、学習時にラベルは使わない）。
 
 
@@ -266,7 +266,7 @@ for i_label in df_wine['Class label'].unique():
     shape: (48, 14)
 
 
-ラベルの数はおおよそ揃っている。  
+ラベルの数はおおよそ揃っている。
 次に、ラベルごとにデータの分布を見てみる。
 
 
@@ -278,9 +278,9 @@ for i_feature in df_wine.columns:
   if i_feature == 'Class label': continue
   print('feature: ' + str(i_feature))
   # ヒストグラムの描画
-  plt.hist(df_wine[df_wine['Class label'] == 1][i_feature], alpha=0.5, bins=20, label="1") 
+  plt.hist(df_wine[df_wine['Class label'] == 1][i_feature], alpha=0.5, bins=20, label="1")
   plt.hist(df_wine[df_wine['Class label'] == 2][i_feature], alpha=0.3, bins=20, label="2", color='r')
-  plt.hist(df_wine[df_wine['Class label'] == 3][i_feature], alpha=0.1, bins=20, label="3", color='g') 
+  plt.hist(df_wine[df_wine['Class label'] == 3][i_feature], alpha=0.1, bins=20, label="3", color='g')
   plt.legend(loc="upper left", fontsize=13) # 凡例表示
   plt.show()
 ```
@@ -289,91 +289,91 @@ for i_feature in df_wine.columns:
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_1.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_1).png?raw=true)
 
 
     feature: Malic acid
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_3.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_3).png?raw=true)
 
 
     feature: Ash
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_5.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_5).png?raw=true)
 
 
     feature: Alcalinity of ash
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_7.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_7).png?raw=true)
 
 
     feature: Magnesium
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_9.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_9).png?raw=true)
 
 
     feature: Total phenols
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_11.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_11).png?raw=true)
 
 
     feature: Flavanoids
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_13.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_13).png?raw=true)
 
 
     feature: Nonflavanoid phenols
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_15.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_15).png?raw=true)
 
 
     feature: Proanthocyanins
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_17.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_17).png?raw=true)
 
 
     feature: Color intensity
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_19.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_19).png?raw=true)
 
 
     feature: Hue
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_21.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_21).png?raw=true)
 
 
     feature: OD280/OD315 of diluted wines
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_23.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_23).png?raw=true)
 
 
     feature: Proline
 
 
 
-![png](da_handson_pca_files/da_handson_pca_14_25.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_25).png?raw=true)
 
 
 データを70％のトレーニングと30％のテストサブセットに分割する。
@@ -385,7 +385,7 @@ from sklearn.model_selection import train_test_split
 X, y = df_wine.iloc[:, 1:].values, df_wine.iloc[:, 0].values
 
 X_train, X_test, y_train, y_test = \
-    train_test_split(X, y, test_size=0.3, 
+    train_test_split(X, y, test_size=0.3,
                      stratify=y,
                      random_state=0)
 ```
@@ -423,20 +423,20 @@ print('standardize test', X_test_std[0:2])
 
 **注意**
 
-テストデータの標準化の際に、テストデータの標準偏差と平均値を用いてはいけない（トレーニングデータの標準偏差と平均値を用いること）。  
-また、ここで求めた標準偏差と平均値は、未知のデータを標準化する際にも再使用するので、記録しておくこと。  
-（今回は、ノートブックだけで完結するので、外部ファイル等に記録しなくても問題ない）  
+テストデータの標準化の際に、テストデータの標準偏差と平均値を用いてはいけない（トレーニングデータの標準偏差と平均値を用いること）。
+また、ここで求めた標準偏差と平均値は、未知のデータを標準化する際にも再使用するので、記録しておくこと。
+（今回は、ノートブックだけで完結するので、外部ファイル等に記録しなくても問題ない）
 
 - 分散共分散行列を作成
 - 固有値問題を解いて、固有値と固有ベクトルを求める
 
-固有値問題とは、以下の条件を満たす、固有ベクトル $v$ と、スカラー値である固有値 $\lambda$ を求める問題のことである  
+固有値問題とは、以下の条件を満たす、固有ベクトル $v$ と、スカラー値である固有値 $\lambda$ を求める問題のことである
 （詳細は線形代数の書籍等を参考）。
 
 $$\Sigma v=\lambda v$$
 
-$\Sigma$ は分散共分散行列である（総和記号ではないことに注意）。  
-  
+$\Sigma$ は分散共分散行列である（総和記号ではないことに注意）。
+
 分散共分散行列に関しては、 [前回の資料](https://github.com/hnishi/hnishi_da_handson/blob/master/da_handson_basic_statistic_values.ipynb) を参照。
 
 
@@ -449,11 +449,11 @@ cov_mat = np.cov(X_train_std.T)
 
 # 共分散行列のヒートマップ
 df = pd.DataFrame(cov_mat, index=df_wine.columns[1:], columns=df_wine.columns[1:])
-ax = sns.heatmap(df, cmap="YlGnBu") 
+ax = sns.heatmap(df, cmap="YlGnBu")
 ```
 
 
-![png](da_handson_pca_files/da_handson_pca_21_0.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_21_0).png?raw=true)
 
 
 
@@ -465,28 +465,28 @@ print('\nEigenvalues \n%s' % eigen_vals)
 print('\nShape of eigen vectors\n', eigen_vecs.shape)
 ```
 
-    
-    Eigenvalues 
+
+    Eigenvalues
     [0.10754642 0.15362835 0.1808613  0.21357215 0.3131368  0.34650377
      0.51828472 0.6620634  0.84166161 0.96120438 1.54845825 2.41602459
      4.84274532]
-    
+
     Shape of eigen vectors
      (13, 13)
 
 
-**注意**: 
+**注意**:
 
 固有値分解（固有分解とも呼ばれる）する numpy の関数は、
 
 - [`numpy.linalg.eig`](http://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eig.html)
-- [`numpy.linalg.eigh`](http://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eigh.html) 
+- [`numpy.linalg.eigh`](http://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eigh.html)
 
-がある。  
-`numpy.linalg.eig` は対称正方行列と非対称正方行列を固有値分解する関数。複素数の固有値を返すことがある。  
-`numpy.linalg.eigh` はエルミート行列（各成分が複素数で、転置させた各成分の虚部の値の正負を反転させたものがもとの行列と等しくなる行列）を固有値分解する関数。常に実数の固有値を返す。  
+がある。
+`numpy.linalg.eig` は対称正方行列と非対称正方行列を固有値分解する関数。複素数の固有値を返すことがある。
+`numpy.linalg.eigh` はエルミート行列（各成分が複素数で、転置させた各成分の虚部の値の正負を反転させたものがもとの行列と等しくなる行列）を固有値分解する関数。常に実数の固有値を返す。
 
-分散共分散行列は、対称正方行列であり、虚数部が 0 のエルミート行列でもある。  
+分散共分散行列は、対称正方行列であり、虚数部が 0 のエルミート行列でもある。
 対称正方行列の操作では、`numpy.linalg.eigh` の方が数値的に安定しているらしい。
 
 Ref) *Python Machine Learning 2nd Edition* by [Sebastian Raschka](https://sebastianraschka.com), Packt Publishing Ltd. 2017.
@@ -497,11 +497,11 @@ Ref) *Python Machine Learning 2nd Edition* by [Sebastian Raschka](https://sebast
 - 固有値の大きさは、データに含まれる情報（分散）の大きさに対応している
 - 主成分j (PCj: j-th principal component) に対応する固有値 $\lambda_j$ の分散説明率（寄与率、contribution ratio/propotion とも呼ばれる）は以下のように定義される。
 
-$$\dfrac {\lambda _{j}}{\sum ^{d}_{j=1}\lambda j}$$ 
+$$\dfrac {\lambda _{j}}{\sum ^{d}_{j=1}\lambda j}$$
 
-$\lambda_j$ は、j 番目の固有値、d は全固有値の数（元々の特徴量の数/次元数）。  
+$\lambda_j$ は、j 番目の固有値、d は全固有値の数（元々の特徴量の数/次元数）。
 
-分散説明率を見ることで、その主成分が特徴量全体がもつ情報のうち、どれぐらいの情報を表すことができているかを確認できる。  
+分散説明率を見ることで、その主成分が特徴量全体がもつ情報のうち、どれぐらいの情報を表すことができているかを確認できる。
 以下に、分散説明率と、その累積和をプロットする。
 
 
@@ -532,7 +532,7 @@ plt.show()
 ```
 
 
-![png](da_handson_pca_files/da_handson_pca_26_0.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_26_0).png?raw=true)
 
 
 グラフから以下のことがわかる。
@@ -546,15 +546,15 @@ plt.show()
 
 ---
 
-$X' = XW$  
+$X' = XW$
 
-$X'$ : 射影（変換）後の座標（行列）  
-$X$ : もともとの座標（行列）   
-$W$ : 射影（変換）行列  
-  
-$W$ は、次元削減後の次元数の固有ベクトルから構成される。  
+$X'$ : 射影（変換）後の座標（行列）
+$X$ : もともとの座標（行列）
+$W$ : 射影（変換）行列
 
-$W = [v_1 v_2 ... v_k] \in \mathbb{R} ^{n\times k}$  
+$W$ は、次元削減後の次元数の固有ベクトルから構成される。
+
+$W = [v_1 v_2 ... v_k] \in \mathbb{R} ^{n\times k}$
 
 
 ```python
@@ -568,11 +568,11 @@ eigen_pairs.sort(key=lambda k: k[0], reverse=True)
 
 ### まずは、次元削減を行わずに、13 次元 --> 13 次元の座標変換を見てみる
 
-$X' = XW$  
+$X' = XW$
 
-$W = [v_1 v_2 ... v_13] \in \mathbb{R} ^{13\times 13}$  
-$x \in \mathbb{R} ^{13}$    
-$x' \in \mathbb{R} ^{13}$    
+$W = [v_1 v_2 ... v_13] \in \mathbb{R} ^{13\times 13}$
+$x \in \mathbb{R} ^{13}$
+$x' \in \mathbb{R} ^{13}$
 
 
 ```python
@@ -601,28 +601,28 @@ cov_mat = np.cov(X_train_pca.T)
 
 # 共分散行列のヒートマップ
 df = pd.DataFrame(cov_mat)
-ax = sns.heatmap(df, cmap="YlGnBu") 
+ax = sns.heatmap(df, cmap="YlGnBu")
 ```
 
 
-![png](da_handson_pca_files/da_handson_pca_32_0.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_32_0).png?raw=true)
 
 
-主成分空間に変換後の各特徴量は、互いに相関が全くないことがわかる（互いに線形独立）。  
+主成分空間に変換後の各特徴量は、互いに相関が全くないことがわかる（互いに線形独立）。
 対角成分は分散値であり、第1主成分から大きい順に並んでいることがわかる。
 
 ### 座標変換された空間から元の空間への復元
 
 ## 座標変換された空間から元の空間への復元
 
-$X = X'W^T$  
+$X = X'W^T$
 
-$X'$ : 座標変換後の座標（行列）  
-$X$ : もともとの空間に復元された座標（行列）   
-$W^T \in \mathbb{R} ^{n\times n}$ : 転置された変）行列  
-   
-$x' \in \mathbb{R} ^{n}$   
-$x_{approx} \in \mathbb{R} ^{n}$   
+$X'$ : 座標変換後の座標（行列）
+$X$ : もともとの空間に復元された座標（行列）
+$W^T \in \mathbb{R} ^{n\times n}$ : 転置された変）行列
+
+$x' \in \mathbb{R} ^{n}$
+$x_{approx} \in \mathbb{R} ^{n}$
 
 
 
@@ -651,11 +651,11 @@ print('復元された特徴量:', x0_reconstructed)
 
 ###  13 次元 --> 2 次元に次元削減する
 
-$X' = XW$  
+$X' = XW$
 
-$W = [v_1 v_2] \in \mathbb{R} ^{13\times 2}$  
-$x \in \mathbb{R} ^{13}$    
-$x' \in \mathbb{R} ^{2}$    
+$W = [v_1 v_2] \in \mathbb{R} ^{13\times 2}$
+$x \in \mathbb{R} ^{13}$
+$x' \in \mathbb{R} ^{2}$
 
 
 ```python
@@ -682,13 +682,13 @@ print('Matrix W:\n', w)
 
 **注意**
 
-NumPy と LAPACK のバージョンによっては、上記の例とは符号が反転した射影行列 w が作成されることがあるが、問題はない。  
-以下の式が成り立つからである。  
+NumPy と LAPACK のバージョンによっては、上記の例とは符号が反転した射影行列 w が作成されることがあるが、問題はない。
+以下の式が成り立つからである。
 
-行列 $\Sigma$ に対して、 $v$ が固有ベクトル、$\lambda$ が固有値のとき、  
+行列 $\Sigma$ に対して、 $v$ が固有ベクトル、$\lambda$ が固有値のとき、
 $$\Sigma v = \lambda v,$$
 
-ここで $-v$ もまた同じ固有値をもつ固有ベクトルとなる。  
+ここで $-v$ もまた同じ固有値をもつ固有ベクトルとなる。
 $$\Sigma \cdot (-v) = -\Sigma v = -\lambda v = \lambda \cdot (-v).$$
 
 (主成分軸のベクトルの向きの違い）
@@ -715,8 +715,8 @@ colors = ['r', 'b', 'g']
 markers = ['s', 'x', 'o']
 
 for l, c, m in zip(np.unique(y_train), colors, markers):
-    plt.scatter(X_train_pca[y_train == l, 0], 
-                X_train_pca[y_train == l, 1], 
+    plt.scatter(X_train_pca[y_train == l, 0],
+                X_train_pca[y_train == l, 1],
                 c=c, label=l, marker=m)
 
 plt.xlabel('PC 1')
@@ -728,22 +728,22 @@ plt.show()
 ```
 
 
-![png](da_handson_pca_files/da_handson_pca_43_0.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_43_0).png?raw=true)
 
 
 PC1 軸方向をみると、PC2 軸方向よりもよりもデータが広く分布しており、データをよりよく区別できていることがわかる。
 
 ## 次元削減された空間から元の空間への復元
 
-$X_{approx} = X'W^T$  
+$X_{approx} = X'W^T$
 
-$X'$ : 射影後の座標（行列）  
-$X_{approx}$ : もともとの空間に、近似的に、復元された座標（行列）   
-$W^T \in \mathbb{R} ^{n\times k}$ : 転置された射影（変換）行列  
-   
-$x' \in \mathbb{R} ^{k}$   
-$x_{approx} \in \mathbb{R} ^{n}$   
-  
+$X'$ : 射影後の座標（行列）
+$X_{approx}$ : もともとの空間に、近似的に、復元された座標（行列）
+$W^T \in \mathbb{R} ^{n\times k}$ : 転置された射影（変換）行列
+
+$x' \in \mathbb{R} ^{k}$
+$x_{approx} \in \mathbb{R} ^{n}$
+
 $k = n$ のとき、$X = X_{approx}$ が成り立つ（上述）。
 
 
@@ -805,7 +805,7 @@ plt.show()
 ```
 
 
-![png](da_handson_pca_files/da_handson_pca_51_0.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_51_0).png?raw=true)
 
 
 
@@ -826,7 +826,7 @@ plt.show()
 ```
 
 
-![png](da_handson_pca_files/da_handson_pca_53_0.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_53_0).png?raw=true)
 
 
 ## 2次元に次元削減された特徴量を用いてロジスティック回帰を行ってみる
@@ -856,12 +856,12 @@ def plot_decision_regions(X, y, classifier, resolution=0.02):
 
     # plot class samples
     for idx, cl in enumerate(np.unique(y)):
-        plt.scatter(x=X[y == cl, 0], 
+        plt.scatter(x=X[y == cl, 0],
                     y=X[y == cl, 1],
-                    alpha=0.6, 
+                    alpha=0.6,
                     c=cmap(idx),
                     edgecolor='black',
-                    marker=markers[idx], 
+                    marker=markers[idx],
                     label=cl)
 ```
 
@@ -927,7 +927,7 @@ plot_confusion_matrix(lr, X_train_pca, y_train)
 
 
 
-![png](da_handson_pca_files/da_handson_pca_62_2.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_62_2).png?raw=true)
 
 
 ### トレーニングデータセットの予測結果
@@ -949,7 +949,7 @@ plt.show()
 
 
 
-![png](da_handson_pca_files/da_handson_pca_64_1.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_64_1).png?raw=true)
 
 
 ### テストデータに対する予測結果
@@ -975,7 +975,7 @@ plot_confusion_matrix(lr, X_test_pca, y_test)
 
 
 
-![png](da_handson_pca_files/da_handson_pca_66_2.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_66_2).png?raw=true)
 
 
 
@@ -995,7 +995,7 @@ plt.show()
 
 
 
-![png](da_handson_pca_files/da_handson_pca_67_1.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_67_1).png?raw=true)
 
 
 次元削減せずに全てのの主成分を取得したい場合は、 `n_components=None` にする。
@@ -1078,7 +1078,7 @@ plot_confusion_matrix(lr, X_train_pca, y_train)
 
 
 
-![png](da_handson_pca_files/da_handson_pca_75_2.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_75_2).png?raw=true)
 
 
 
@@ -1100,7 +1100,7 @@ plt.show()
 ```
 
 
-![png](da_handson_pca_files/da_handson_pca_76_0.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_76_0).png?raw=true)
 
 
 
@@ -1123,12 +1123,12 @@ fig.show()
     <div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>
                 <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
             <div id="50877fa6-75d2-4516-8ee8-799aa48be9ad" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
-                
+
                     window.PLOTLYENV=window.PLOTLYENV || {};
-                    
+
                 if (document.getElementById("50877fa6-75d2-4516-8ee8-799aa48be9ad")) {
                     Plotly.newPlot(
                         '50877fa6-75d2-4516-8ee8-799aa48be9ad',
@@ -1136,7 +1136,7 @@ fig.show()
                         {"coloraxis": {"colorbar": {"title": {"text": "label"}}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "legend": {"tracegroupgap": 0}, "margin": {"t": 60}, "scene": {"domain": {"x": [0.0, 1.0], "y": [0.0, 1.0]}, "xaxis": {"title": {"text": "PC1"}}, "yaxis": {"title": {"text": "PC2"}}, "zaxis": {"title": {"text": "PC3"}}}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}},
                         {"responsive": true}
                     ).then(function(){
-                            
+
 var gd = document.getElementById('50877fa6-75d2-4516-8ee8-799aa48be9ad');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
@@ -1161,7 +1161,7 @@ if (outputEl) {{
 
                         })
                 };
-                
+
             </script>
         </div>
 </body>
@@ -1223,18 +1223,18 @@ plot_confusion_matrix(lr, X_test_std, y_test)
 
 
 
-![png](da_handson_pca_files/da_handson_pca_82_2.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_82_2).png?raw=true)
 
 
 
-![png](da_handson_pca_files/da_handson_pca_82_3.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_82_3).png?raw=true)
 
 
-元々の全ての特徴量を使って学習させた方が精度が高くなった。  
+元々の全ての特徴量を使って学習させた方が精度が高くなった。
 学習時間は、次元削減したほうがわずかに早くなっている。
-（主成分 2 つで学習した場合 4.9 ms に対し、元々の特徴量全て使った場合 5.64 ms）  
-結論として、今回のタスクでは、PCA を適用するべきではなく、すべての特徴量を使用したほうが良い。  
-  
+（主成分 2 つで学習した場合 4.9 ms に対し、元々の特徴量全て使った場合 5.64 ms）
+結論として、今回のタスクでは、PCA を適用するべきではなく、すべての特徴量を使用したほうが良い。
+
 もっとデータ数が大きい場合や、モデルのパラメータ数が多い場合には、次元削減が効果的となる。
 
 ### 2つの特徴量だけでロジスティック回帰を行ってみる
@@ -1289,11 +1289,11 @@ plot_confusion_matrix(lr, X_test_std[:,:2], y_test)
 
 
 
-![png](da_handson_pca_files/da_handson_pca_87_2.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_87_2).png?raw=true)
 
 
 
-![png](da_handson_pca_files/da_handson_pca_87_3.png)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_87_3).png?raw=true)
 
 
 もともとの特徴量を 2 つだけ使った場合、精度はかなり下がる。
@@ -1308,14 +1308,14 @@ plot_confusion_matrix(lr, X_test_std[:,:2], y_test)
   - 学習アルゴリズムを高速化できる
 - 可視化
   - 多数の特徴量（次元）をもつデータを2次元などの理解しやすい空間に落とし込んで議論、解釈することができる。
-  
+
 しかし、機械学習の前処理として利用する場合には、以下のことに注意する必要がある。
 
 - 次元削減を行うことによって、多少なりとも情報が失われている
-- まずは、すべての特徴量を使ってトレーニングを試すことが大事  
+- まずは、すべての特徴量を使ってトレーニングを試すことが大事
 - 次元削減によってオーバーフィッティングを防ぐことができるが、次元削減を使う前に正則化を使うべし
 - 上記を試してから、それでも望む結果を得られない場合、次元削減を使う
-- 機械学習のトレーニングでは、通常は、99% の累積寄与率が得られるように削減後の次元数を選ぶことが多い  
+- 機械学習のトレーニングでは、通常は、99% の累積寄与率が得られるように削減後の次元数を選ぶことが多い
 
 参考) [Andrew Ng先生の講義](https://www.coursera.org/learn/machine-learning)
 
