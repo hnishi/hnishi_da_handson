@@ -289,91 +289,91 @@ for i_feature in df_wine.columns:
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_1).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_1.png?raw=true)
 
 
     feature: Malic acid
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_3).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_3.png?raw=true)
 
 
     feature: Ash
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_5).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_5.png?raw=true)
 
 
     feature: Alcalinity of ash
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_7).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_7.png?raw=true)
 
 
     feature: Magnesium
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_9).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_9.png?raw=true)
 
 
     feature: Total phenols
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_11).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_11.png?raw=true)
 
 
     feature: Flavanoids
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_13).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_13.png?raw=true)
 
 
     feature: Nonflavanoid phenols
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_15).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_15.png?raw=true)
 
 
     feature: Proanthocyanins
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_17).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_17.png?raw=true)
 
 
     feature: Color intensity
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_19).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_19.png?raw=true)
 
 
     feature: Hue
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_21).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_21.png?raw=true)
 
 
     feature: OD280/OD315 of diluted wines
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_23).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_23.png?raw=true)
 
 
     feature: Proline
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_14_25).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_14_25.png?raw=true)
 
 
 データを70％のトレーニングと30％のテストサブセットに分割する。
@@ -453,7 +453,7 @@ ax = sns.heatmap(df, cmap="YlGnBu")
 ```
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_21_0).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_21_0.png?raw=true)
 
 
 
@@ -532,7 +532,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_26_0).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_26_0.png?raw=true)
 
 
 グラフから以下のことがわかる。
@@ -605,7 +605,7 @@ ax = sns.heatmap(df, cmap="YlGnBu")
 ```
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_32_0).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_32_0.png?raw=true)
 
 
 主成分空間に変換後の各特徴量は、互いに相関が全くないことがわかる（互いに線形独立）。
@@ -728,7 +728,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_43_0).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_43_0.png?raw=true)
 
 
 PC1 軸方向をみると、PC2 軸方向よりもよりもデータが広く分布しており、データをよりよく区別できていることがわかる。
@@ -805,7 +805,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_51_0).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_51_0.png?raw=true)
 
 
 
@@ -826,7 +826,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_53_0).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_53_0.png?raw=true)
 
 
 ## 2次元に次元削減された特徴量を用いてロジスティック回帰を行ってみる
@@ -927,7 +927,7 @@ plot_confusion_matrix(lr, X_train_pca, y_train)
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_62_2).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_62_2.png?raw=true)
 
 
 ### トレーニングデータセットの予測結果
@@ -949,7 +949,7 @@ plt.show()
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_64_1).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_64_1.png?raw=true)
 
 
 ### テストデータに対する予測結果
@@ -975,7 +975,7 @@ plot_confusion_matrix(lr, X_test_pca, y_test)
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_66_2).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_66_2.png?raw=true)
 
 
 
@@ -995,7 +995,7 @@ plt.show()
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_67_1).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_67_1.png?raw=true)
 
 
 次元削減せずに全てのの主成分を取得したい場合は、 `n_components=None` にする。
@@ -1078,7 +1078,7 @@ plot_confusion_matrix(lr, X_train_pca, y_train)
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_75_2).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_75_2.png?raw=true)
 
 
 
@@ -1100,7 +1100,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_76_0).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_76_0.png?raw=true)
 
 
 
@@ -1223,11 +1223,11 @@ plot_confusion_matrix(lr, X_test_std, y_test)
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_82_2).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_82_2.png?raw=true)
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_82_3).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_82_3.png?raw=true)
 
 
 元々の全ての特徴量を使って学習させた方が精度が高くなった。
@@ -1289,11 +1289,11 @@ plot_confusion_matrix(lr, X_test_std[:,:2], y_test)
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_87_2).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_87_2.png?raw=true)
 
 
 
-![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_h(files/da_handson_pca_87_3).png?raw=true)
+![png](https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_87_3.png?raw=true)
 
 
 もともとの特徴量を 2 つだけ使った場合、精度はかなり下がる。

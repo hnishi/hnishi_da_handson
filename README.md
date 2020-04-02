@@ -42,6 +42,5 @@ jupyter nbconvert --to markdown da_handson_basic_statistic_values.ipynb
 image の path を vim で置換する。
 
 ```
-:%s;da_handson_pca_\(.*\).png;https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_
-files/da_handson_pca_h(\1).png?raw=true;gc
+:%s;da_handson_pca_files/da_handson_pca_\(.*\).png;https://github.com/hnishi/hnishi_da_handson/blob/dev/markdown/da_handson_pca_files/da_handson_pca_\1.png?raw=true;gc
 ```
