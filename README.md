@@ -7,6 +7,7 @@
 
 - [基本的な統計量とガウス分布](da_handson_basic_statistic_values.ipynb)
 - [主成分分析](da_handson_pca.ipynb)
+- [クラスタ分析](da_handson_clustering.ipynb)
 
 ## 使い方
 
