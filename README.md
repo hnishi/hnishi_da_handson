@@ -1,3 +1,7 @@
+**こちらの記事は以下に移転してメンテナンスすることになりました。このレポジトリはアーカイブいたします。**
+
+https://jupyterbook.hnishi.com/data-analysis/intro.html
+
 # データ分析 勉強会 資料
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
